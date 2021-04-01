@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+
+    function ex1() {
+        // take the follow list of students
+        // get the average of students who follow physics
+
+        const students = [
+        {
+            'id': 5,
+            'name': 'Perone Skywalker',
+            'average': 78.9,
+            'major': 'Physics',
+         },
+        {
+            'id': 82,
+            'name': 'Micheal Wren',
+            'average': 73,
+            'major': 'Biology',
+        },
+        {
+            'id': 22,
+            'name': 'Zeb De Leone',
+            'average': 59,
+            'major': 'Physics',
+        },
+        {
+            'id': 15,
+            'name': 'Chidi Bridger',
+            'average': 73,
+            'major': 'Physics',
+        },
+        {
+            'id': 11,
+            'name': 'Caleb Canop',
+            'average': 33,
+            'major': 'Chemistry',
+        },
+        {
+            'id': 47,
+            'name': 'Neo Plims',
+            'average': 79,
+            'major': 'Biology',
+        }
+    ];
+    
+    const physicsStud = students.filter(student => student['major'] == 'Physics');
+    const physicsStudAvg = physicsStud.map(student => student['average']);
+    const physicsTotAvg = physicsStudAvg.reduce((sum, studAvg) => (sum + studAvg)) / physicsStudAvg.length;
+    console.log(physicsTotAvg); physicsTotAvg
+};
+
+    function init() {
+
+        ex1()
+    };
+        $(init)
+    </script>
+</body>
+</html>
